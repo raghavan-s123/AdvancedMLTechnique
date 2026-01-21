@@ -1,10 +1,13 @@
 import pandas as pd
 import sys
 import os
+import warnings
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import RepeatedKFold, cross_val_predict
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.metrics import confusion_matrix, classification_report, accuracy_score, recall_score, f1_score, precision_score
+
+warnings.filterwarnings('ignore')
 
 file = input()
 df = pd.read_csv(os.path.join(sys.path[0], file))
